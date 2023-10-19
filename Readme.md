@@ -25,46 +25,46 @@ dotnet run
 |No|Sample|Description|
 |---|---|-----------------|
 |1.01|[Getting started] | Basic usage of EPPlus: create a workbook, fill with data and some basic styling|
-|1.02|[Read an Existing Workbook] | Read in a workbook|
-|1.03|[Using AsyncAwait] | Async Await in Epplus|
-|1.04|[Fill Copy and Sort Ranges] |Different range operations|
-|1.05|[Notes and Threaded Comments] | Handling notes and Comments in Epplus|
-|1.06|[SalesReport With Hyperlinks] | Hyperlink and database guide|
-|1.07|[Performance Write] | Loading and writing in a performant way|
-|1.08|[Performance Read Using Linq] | Using Linq on Cells|
-|1.09|[ExternalLinks] | External links to other workbooks|
-|1.10|[Ignore Errors] | How to ignore errors on ranges|
+|1.02|[Read an existing workbook] | Read in a workbook|
+|1.03|[Using async await] | Async Await in Epplus|
+|1.04|[Fill copy and sort ranges] |Different range operations|
+|1.05|[Notes and threaded comments] | Handling notes and Comments in Epplus|
+|1.06|[Sales report with hyperlinks] | Hyperlink and database guide|
+|1.07|[Performance write] | Loading and writing in a performant way|
+|1.08|[Performance read using linq] | Using Linq on Cells|
+|1.09|[External links] | External links to other workbooks|
+|1.10|[Ignore errors] | How to ignore errors on ranges|
 
 [Getting started]: </01-Workbook worksheet and ranges/01-Create a simple workbook/Readme.md/>
-[Read an Existing Workbook]: </01-Workbook worksheet and ranges/02-Read an existing workbook/Readme.md/>
-[Using AsyncAwait]: </01-Workbook worksheet and ranges/03-Using async await/Readme.md/>
-[Fill Copy and Sort Ranges]: </01-Workbook worksheet and ranges/04-Fill copy and sort ranges/Readme.md/>
-[Notes and Threaded Comments]: </01-Workbook worksheet and ranges/05-Notes and threaded comments/Readme.md/>
-[SalesReport With Hyperlinks]: </01-Workbook worksheet and ranges/06-Sales report with hyperlinks/Readme.md/>
-[Performance Write]: </01-Workbook worksheet and ranges/07-Performance write/Readme.md/>
-[Performance Read Using Linq]: </01-workbook worksheet and ranges/08-Performance read using Linq/Readme.md/>
-[ExternalLinks]: </01-workbook worksheet and ranges/09-External links/Readme.md/>
-[Ignore Errors]: </01-workbook worksheet and ranges/10-Ignore errors/Readme.md/>
+[Read an existing workbook]: </01-Workbook worksheet and ranges/02-Read an existing workbook/Readme.md/>
+[Using async await]: </01-Workbook worksheet and ranges/03-Using async await/Readme.md/>
+[Fill copy and sort ranges]: </01-Workbook worksheet and ranges/04-Fill copy and sort ranges/Readme.md/>
+[Notes and threaded comments]: </01-Workbook worksheet and ranges/05-Notes and threaded comments/Readme.md/>
+[Sales report with hyperlinks]: </01-Workbook worksheet and ranges/06-Sales report with hyperlinks/Readme.md/>
+[Performance write]: </01-Workbook worksheet and ranges/07-Performance write/Readme.md/>
+[Performance read using linq]: </01-Workbook worksheet and ranges/08-Performance read using Linq/Readme.md/>
+[External links]: </01-Workbook worksheet and ranges/09-External links/Readme.md/>
+[Ignore errors]: </01-Workbook worksheet and ranges/10-Ignore errors/Readme.md/>
 ___
 
 ### [Import and Export](</02-Import and export/Readme.md>)
 
 |No|Sample|Description|
 |---|---|-----------------|
-|2.1|[Load Data From Collection]| Load data into worksheet from various types of objects. It also demonstrates the Autofit columns feature.|
-|2.2|[Export Data To Collection]| Demonstrates Export ranges and tables into an IEnumerable&lt;T&gt; where T is a class type. |
+|2.1|[Load data from collection]| Load data into worksheet from various types of objects. It also demonstrates the Autofit columns feature.|
+|2.2|[Export data to collection]| Demonstrates Export ranges and tables into an IEnumerable&lt;T&gt; where T is a class type. |
 |2.3|[Import export csv files] | Async Await in Epplus|
 |2.4|[Import export DataTable] |Different range operations|
-|2.5|[Export to Html] | Handling notes and Comments in Epplus|
-|2.6|[Export to Json] | Hyperlink and database guide|
+|2.5|[Export to html] | Handling notes and Comments in Epplus|
+|2.6|[Export to json] | Hyperlink and database guide|
 
-[Import and Export]: </02-Import and export/Readme.md>
-[Load Data From Collection]: </02-Import and export/01-Load data from collection/Readme.md/>
-[Export Data To Collection]: </02-Import and export/02-Export data to collection/Readme.md/>
+[Import and export]: </02-Import and export/Readme.md>
+[Load data from collection]: </02-Import and export/01-Load data from collection/Readme.md/>
+[Export data to collection]: </02-Import and export/02-Export data to collection/Readme.md/>
 [Import export csv files]: </02-Import and export/03-Import export csv files/Readme.md/>
 [Import export DataTable]: </02-Import and export/04-Import export DataTable/Readme.md/>
-[Export to Html]: </02-Import and export/05-Export to html/Readme.md/>
-[Export to Json]: </02-Import and export/06-Export to json/Readme.md/>
+[Export to html]: </02-Import and export/05-Export to html/Readme.md/>
+[Export to json]: </02-Import and export/06-Export to json/Readme.md/>
 
 ___
 
@@ -72,14 +72,14 @@ ___
 |No|Sample|Description|
 |---|---|-----------------|
 |3.1|[Styling basics] | Demonstrates how to apply different styling on cells including Fills, Fonts etc. |
-|3.2|[ConditionalFormatting]| Demonstrates all conditional formatting and how to apply styling/Formatting. |
-|3.3|[FXReportFromDatabase] | This sample produces a workbook with foreign exchange rates. |
-|3.4|[CreateFileSystemReport] | Demonstrates usage of styling, printer settings, rich text, pie-, doughnut- and bar-charts, freeze panes.|
+|3.2|[Conditional formatting]| Demonstrates all conditional formatting and how to apply styling/Formatting. |
+|3.3|[FX report from database] | This sample produces a workbook with foreign exchange rates. |
+|3.4|[[Create a file system report] | Demonstrates usage of styling, printer settings, rich text, pie-, doughnut- and bar-charts, freeze panes.|
 
 [Styling basics]: </03-Styling/01-Styling basics/Readme.md/>
-[ConditionalFormatting]: </03-Styling/02-Conditional formatting/Readme.md/>
-[FXReportFromDatabase]: </03-Styling/03-FX report from database/Readme.md/>
-[CreateFileSystemReport]: </03-Styling/04-Create file system report/Readme.md/>
+[Conditional formatting]: </03-Styling/02-Conditional formatting/Readme.md/>
+[FX report from database]: </03-Styling/03-FX report from database/Readme.md/>
+[Create a file system report]: </03-Styling/04-Create a file system report/Readme.md/>
 
 ___
 
@@ -97,18 +97,18 @@ ___
 ### [Drawings Charts and Themes](</05-Drawings charts and themes/Readme.md>)
 |No|Sample|Description|
 |---|---|-----------------|
-|5.1|[Shapes and Images]| How to create shapes and images using EPPlus and apply effects|
-|5.2|[Open Workbook Add Data And Chart]|Open an existing workbook with EPPlus, add data and charts |
-|5.3|[Charts And Themes]|Demonstrates how to use various types of charts, chart styling and themes  |
+|5.1|[Shapes and images]| How to create shapes and images using EPPlus and apply effects|
+|5.2|[Open workbook add data and chart]|Open an existing workbook with EPPlus, add data and charts |
+|5.3|[Charts And themes]|Demonstrates how to use various types of charts, chart styling and themes  |
 |5.4|[Sparklines]| demonstrates EPPlus support for Sparklines|
-|5.5|[FormControls] | demonstrates how to Add form controls, like drop-downs, buttons and radiobuttons to a worksheet and grouping drawings via VBA Macro|
+|5.5|[Form controls] | demonstrates how to Add form controls, like drop-downs, buttons and radiobuttons to a worksheet and grouping drawings via VBA Macro|
 
 
-[Shapes and Images]: </05-Drawings charts and themes/01-Shapes and images/Readme.md/>
-[Open Workbook Add Data And Chart]: </05-Drawings charts and themes/02-Open workbook add data and chart/Readme.md/>
-[Charts And Themes]: </05-Drawings charts and themes/03-Charts and themes/Readme.md/>
+[Shapes and images]: </05-Drawings charts and themes/01-Shapes and images/Readme.md/>
+[Open workbook add data and chart]: </05-Drawings charts and themes/02-Open workbook add data and chart/Readme.md/>
+[Charts And themes]: </05-Drawings charts and themes/03-Charts and themes/Readme.md/>
 [Sparklines]: </05-Drawings charts and themes/04-Sparklines/Readme.md/>
-[FormControls]: </05-Drawings charts and themes/05-Form controls/Readme.md/>
+[Form controls]: </05-Drawings charts and themes/05-Form controls/Readme.md/>
 
 ___
 
