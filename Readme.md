@@ -73,12 +73,12 @@ ___
 |---|---|-----------------|
 |3.1|[Styling basics] | Demonstrates how to apply different styling on cells including Fills, Fonts etc. |
 |3.2|[Conditional formatting]| Demonstrates all conditional formatting and how to apply styling/Formatting. |
-|3.3|[FX report from database] | This sample produces a workbook with foreign exchange rates. |
-|3.4|[[Create a file system report] | Demonstrates usage of styling, printer settings, rich text, pie-, doughnut- and bar-charts, freeze panes.|
+|3.3|[Fx report from database] | This sample produces a workbook with foreign exchange rates. |
+|3.4|[Create a file system report] | Demonstrates usage of styling, printer settings, rich text, pie-, doughnut- and bar-charts, freeze panes.|
 
 [Styling basics]: </03-Styling/01-Styling basics/Readme.md/>
 [Conditional formatting]: </03-Styling/02-Conditional formatting/Readme.md/>
-[FX report from database]: </03-Styling/03-FX report from database/Readme.md/>
+[Fx report from database]: </03-Styling/03-Fx report from database/Readme.md/>
 [Create a file system report]: </03-Styling/04-Create a file system report/Readme.md/>
 
 ___
