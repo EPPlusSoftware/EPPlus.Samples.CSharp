@@ -24,7 +24,7 @@ dotnet run
 ### [Workbook Worksheet and Ranges](</01-Workbook worksheet and ranges/Readme.md>)
 |No|Sample|Description|
 |---|---|-----------------|
-|1.01|[Getting started] | Basic usage of EPPlus: create a workbook, fill with data and some basic styling|
+|1.01|[Getting started] | Basic usage of EPPlus: create a workbook, fill with data and some basic styling <img width=800/>|
 |1.02|[Read an existing workbook] | Read in a workbook|
 |1.03|[Using async await] | Async Await in Epplus|
 |1.04|[Fill copy and sort ranges] |Different range operations|
@@ -51,7 +51,7 @@ ___
 
 |No|Sample|Description|
 |---|---|-----------------|
-|2.1|[Load data from collection]| Load data into worksheet from various types of objects. It also demonstrates the Autofit columns feature.|
+|2.1|[Load data from collection]| Load data into worksheet from various types of objects. It also demonstrates the Autofit columns feature.<img width=800/>|
 |2.2|[Export data to collection]| Demonstrates Export ranges and tables into an IEnumerable&lt;T&gt; where T is a class type. |
 |2.3|[Import export csv files] | Async Await in Epplus|
 |2.4|[Import export DataTable] |Different range operations|
@@ -72,7 +72,7 @@ ___
 |No|Sample|Description|
 |---|---|-----------------|
 |3.1|[Styling basics] | Demonstrates how to apply different styling on cells including Fills, Fonts etc. |
-|3.2|[Conditional formatting]| Demonstrates all conditional formatting and how to apply styling/Formatting. |
+|3.2|[Conditional formatting]| Demonstrates all conditional formatting and how to apply styling/Formatting.<img width=800/>|
 |3.3|[Fx report from database] | This sample produces a workbook with foreign exchange rates. |
 |3.4|[Create a file system report] | Demonstrates usage of styling, printer settings, rich text, pie-, doughnut- and bar-charts, freeze panes.|
 
@@ -86,8 +86,9 @@ ___
 ### [Filters and Validations](</04-Filters and validations/Readme.md>)
 |No|Sample|Description|
 |---|---|-----------------|
-|4.1|[Data Validations] | Demonstrates how to apply different styling on cells including Fills, Fonts etc. |
+|4.1|[Data Validations] | Demonstrates how to apply different styling on cells including Fills, Fonts etc.<img width=800/>|
 |4.2|[Filter]| Demonstrates all conditional formatting and how to apply styling/Formatting. |
+<img width=800/>
 
 [Data Validations]: </04-Filters and validations/01-Data validation/Readme.md/>
 [Filter]: </04-Filters and validations/02-Filter/Readme.md/>
@@ -97,7 +98,7 @@ ___
 ### [Drawings Charts and Themes](</05-Drawings charts and themes/Readme.md>)
 |No|Sample|Description|
 |---|---|-----------------|
-|5.1|[Shapes and images]| How to create shapes and images using EPPlus and apply effects|
+|5.1|[Shapes and images]| How to create shapes and images using EPPlus and apply effects<img width=800/>|
 |5.2|[Open workbook add data and chart]|Open an existing workbook with EPPlus, add data and charts |
 |5.3|[Charts And themes]|Demonstrates how to use various types of charts, chart styling and themes  |
 |5.4|[Sparklines]| demonstrates EPPlus support for Sparklines|
@@ -116,7 +117,7 @@ ___
 
 |No|Sample|Description|
 |---|---|-----------------|
-|6.1|[Formula Calculation] | shows formula calculation capabilities of EPPlus|
+|6.1|[Formula Calculation] | shows formula calculation capabilities of EPPlus<img width=800/>|
 |6.2|[Dynamic Array Formulas] | Example of dynamic array formula calculation |
 
 [Formula Calculation]: </06-Formula calculation/01-Formula calculation/Readme.md/>
@@ -128,7 +129,7 @@ ___
 
 |No|Sample|Description|
 |---|---|-----------------|
-|7.1|[Tables]| Samples of creating and calculating tables in Epplus|
+|7.1|[Tables]| Samples of creating and calculating tables in Epplus<img width=800/>|
 |7.2|[Pivot Tables]| Pivot table functionality of EPPlus |
 |7.3|[Slicers]| Slicers for table and pivot table slicers |
 |7.4|[Custom Named Styles]| Example for how to create custom slicer styles |
@@ -144,7 +145,7 @@ ___
 
 |No|Sample|Description|
 |---|---|-----------------|
-|8.1|[Encryption and Protection]| Sample of encryption and password protection|
+|8.1|[Encryption and Protection]| Sample of encryption and password protection<img width=800/>|
 |8.2|[VBA]| An implementation of a Battleship game, implemented in Excel/VBA as an example of epplus+VBA interaction |
 
 [Encryption and Protection]: </08-Encryption protection and VBA/01-Encryption and protection/Readme.md/>
