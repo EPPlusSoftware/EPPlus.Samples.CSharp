@@ -29,7 +29,7 @@ namespace EPPlusSamples.WorkbookWorksheetAndRanges
         /// <param name="outputDir">The path where sample7.xlsx is</param>
         public static void Run()
         {
-            Console.WriteLine("Running sample 10-Linq");
+            Console.WriteLine("Running sample 1.8-Linq");
             Console.WriteLine("Now open sample 1.7 again and perform some Linq queries...");
 		    Console.WriteLine();
 

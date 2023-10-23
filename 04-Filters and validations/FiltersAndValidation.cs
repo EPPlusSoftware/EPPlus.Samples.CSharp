@@ -11,13 +11,13 @@ namespace EPPlusSamples
     {
         public static async Task RunAsync()
         {
-            //Sample 12 - Data validation
+            //Sample 4.1 - Data validation
             DataValidationSample.Run();
 
-            //Sample 13 - Filter
-            Console.WriteLine("Running sample 13-Filter");
+            //Sample 4.2 - Filter
+            Console.WriteLine("Running sample 4.2-Filter");
             await Filter.RunAsync();
-            Console.WriteLine("Sample 13 created {0}", FileUtil.OutputDir.Name);
+            Console.WriteLine("Sample 4.2 created {0}", FileUtil.OutputDir.Name);
             Console.WriteLine();
         }
     }
