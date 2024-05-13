@@ -37,7 +37,7 @@ namespace EPPlusSamples.LoadDataFromCsvFilesIntoTables
         /// <returns></returns>
         public static async Task RunAsync()
         {
-            Console.WriteLine("Running sample 2.3");
+            Console.WriteLine("Running sample 2.3.1");
             FileInfo newFile = FileUtil.GetCleanFileInfo(@"2.3-LoadDataFromCsvFilesIntoTables.xlsx");
             
             using (ExcelPackage package = new ExcelPackage())
@@ -47,7 +47,7 @@ namespace EPPlusSamples.LoadDataFromCsvFilesIntoTables
                 await ExportTableAsync(package);
                 await package.SaveAsAsync(newFile);
             }
-            Console.WriteLine("Sample 2.3 created: {0}", newFile.FullName);
+            Console.WriteLine("Sample 2.3.1 created: {0}", newFile.FullName);
             Console.WriteLine();
         }
 
@@ -81,7 +81,7 @@ namespace EPPlusSamples.LoadDataFromCsvFilesIntoTables
                 SkipLinesEnd = 1
             };
 
-            var file1 = FileUtil.GetFileInfo("02-Import and Export\\03-Import export csv files", "Sample2.3-1.txt");
+            var file1 = FileUtil.GetFileInfo("02-Import and Export\\03-Import export text files", "Sample2.3-1.txt");
 
             //Now read the file into the sheet. Start from cell A1. Create a table with style 27. First row contains the header.
             Console.WriteLine("Load the text file...");
@@ -152,7 +152,7 @@ namespace EPPlusSamples.LoadDataFromCsvFilesIntoTables
 
             //Now read the file into the sheet.
             Console.WriteLine("Load the text file...");
-           var file2 = FileUtil.GetFileInfo("02-Import and Export\\03-Import export csv files", "Sample2.3-2.txt");
+           var file2 = FileUtil.GetFileInfo("02-Import and Export\\03-Import export text files", "Sample2.3-2.txt");
 
             var range = await sheet.Cells["A1"].LoadFromTextAsync(file2, format);
 

@@ -1,4 +1,5 @@
-﻿using EPPlusSamples.ImportAndExport;
+﻿using EPPlusSamples._02_Import_and_export._03_Import_export_text_files;
+using EPPlusSamples.ImportAndExport;
 using EPPlusSamples.LoadDataFromCsvFilesIntoTables;
 using EPPlusSamples.LoadingData;
 using System;
@@ -17,9 +18,12 @@ namespace EPPlusSamples
 
             LoadingDataFromCollection.Run();
 
-            //Sample 2.3 Loads two csv files into tables and creates an area chart and a Column/Line chart on the data.
+            //Sample 2.3.1 Loads two csv files into tables and creates an area chart and a Column/Line chart on the data.
             //This sample also shows how to use a secondary axis.
             await ImportAndExportCsvFilesSample.RunAsync();
+
+            //Sample 2.3.2 Shows the 2 ways to load a fixed width text file into a sheet and also how to export to a fixed width text file
+            Sample020302_ImportAndExportFixedWidthFiles.RunSample();
 
             //Sample 2.4 - Import and Export DataTable
             DataTableSample.Run();
