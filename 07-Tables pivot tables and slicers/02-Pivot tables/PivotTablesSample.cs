@@ -74,7 +74,9 @@ namespace EPPlusSamples.PivotTables
                 var pt5 = CreatePivotTableWithACalculatedField(pck, pt2.CacheDefinition);
                 var pt6 = CreatePivotTableCaptionFilter(pck, dataRange);
                 var pt7 = CreatePivotTableWithDataFieldsUsingShowAs(pck, dataRange);
-                
+
+
+                pt1.Calculate();
                 CreatePivotTableSorting(pck, dataRange);
 
                 pck.Save();

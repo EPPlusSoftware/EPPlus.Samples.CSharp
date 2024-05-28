@@ -23,7 +23,7 @@ namespace EPPlusSamples
             await ImportAndExportCsvFilesSample.RunAsync();
 
             //Sample 2.3.2 Shows the 2 ways to load a fixed width text file into a sheet and also how to export to a fixed width text file
-            Sample020302_ImportAndExportFixedWidthFiles.RunSample();
+            //Sample020302_ImportAndExportFixedWidthFiles.RunSample();
 
             //Sample 2.4 - Import and Export DataTable
             DataTableSample.Run();

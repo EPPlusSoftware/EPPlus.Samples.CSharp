@@ -96,7 +96,7 @@ namespace EPPlusSamples._02_Import_and_export._03_Import_export_text_files
                 //Set the length of the row and the staring positions of each column
                 format.SetColumnLengths(16, 10, 16, 8, 1);
                 //Write header
-                format.Header = "Name            Date Ammount          Percent Category";
+                format.Header = "Name            Date Amount          Percent Category";
 
                 //Export the range to fixed width text file.
                 sheet.Cells["A1:E6"].SaveToText(FileUtil.GetCleanFileInfo("2.3.2-ExportedFromEPPlus.txt"), format);
@@ -118,7 +118,7 @@ namespace EPPlusSamples._02_Import_and_export._03_Import_export_text_files
                 //Set the length of the row and the staring positions of each column
                 format.SetColumnPositions(51, 0, 16, 26, 42, 50);
                 //Write header
-                format.Header = "Name            Date Ammount          Percent Category";
+                format.Header = "Name            Date Amount          Percent Category";
 
                 //Export the range to fixed width text file.
                 sheet.Cells["A1:E6"].SaveToText(FileUtil.GetCleanFileInfo("2.3.2-ExportedFromEPPlus.txt"), format);
