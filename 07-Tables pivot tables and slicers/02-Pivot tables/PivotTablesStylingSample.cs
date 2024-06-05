@@ -29,7 +29,7 @@ using OfficeOpenXml.Table;
 namespace EPPlusSamples.PivotTables
 {
     /// <summary>
-    /// This class shows how to use pivottables 
+    /// This class shows how to style pivot tables 
     /// </summary>
     public static class PivotTablesStylingSample
     {

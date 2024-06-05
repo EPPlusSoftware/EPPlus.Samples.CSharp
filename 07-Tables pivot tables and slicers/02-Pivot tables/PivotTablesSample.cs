@@ -26,7 +26,7 @@ using EPPlusSamples.FiltersAndValidations;
 namespace EPPlusSamples.PivotTables
 {
     /// <summary>
-    /// This class shows how to use pivottables 
+    /// This class shows how to use pivot tables 
     /// </summary>
     public static class PivotTablesSample
     {
