@@ -24,13 +24,14 @@ namespace EPPlusSamples._02_Import_and_export._03_Import_export_text_files
     /// <summary>
     /// This sample shows how to load/save Fixed Width files using the LoadFromText and SaveToText methods.
     /// </summary>
-    public static class Sample020302_ImportAndExportFixedWidthFiles
+    public static class ImportAndExportFixedWidthFiles
     {
         public static void RunSample()
         {
             Console.WriteLine("Running sample 2.3.2");
             var fixedWidthFile = FileUtil.GetFileInfo("02-Import and Export\\03-Import export text files", "Sample2.3.2-1.txt");
-            FileInfo newFile = FileUtil.GetCleanFileInfo(@"2.3.2-LoadDataFromFixedWidthFiles.xlsx");
+            var workbookFixedWidth = FileUtil.GetFileInfo("Workbooks", "2.3.2-FixedWidthExport.xlsx").FullName;
+            FileInfo newWorkbook = FileUtil.GetCleanFileInfo(@"2.3.2-LoadDataFromFixedWidthFiles.xlsx");
 
             //Import fixed width text file using column length.
             {
@@ -51,10 +52,8 @@ namespace EPPlusSamples._02_Import_and_export._03_Import_export_text_files
                 var range = sheet.Cells["A1"].LoadFromText(fixedWidthFile, format);
 
                 //Save the excel file.
-                package.SaveAs(newFile);
+                package.SaveAs(newWorkbook);
             }
-
-
 
 
 
@@ -62,7 +61,7 @@ namespace EPPlusSamples._02_Import_and_export._03_Import_export_text_files
             {
                 Console.WriteLine("Importing the file using column positions...");
                 //Create a workbook and a worksheet.
-                using var package = new ExcelPackage();
+                using var package = new ExcelPackage(newWorkbook);
                 var sheet = package.Workbook.Worksheets.Add("FixedWidthPositions");
 
                 //Create the import settings object.
@@ -77,9 +76,8 @@ namespace EPPlusSamples._02_Import_and_export._03_Import_export_text_files
                 var range = sheet.Cells["A1"].LoadFromText(fixedWidthFile, format);
 
                 //Save the excel file.
-                package.SaveAs(newFile);
+                package.Save();
             }
-
 
 
 
@@ -87,21 +85,22 @@ namespace EPPlusSamples._02_Import_and_export._03_Import_export_text_files
             {
                 Console.WriteLine("Exporting the file using column lengths...");
                 //Load workbook and worksheet.
-                using var package = new ExcelPackage(/*Path*/);
-                var sheet = package.Workbook.Worksheets["FixedWidthLengths"];
+                using var package = new ExcelPackage(workbookFixedWidth);
+                var sheet = package.Workbook.Worksheets["Sheet1"];
 
                 //Create the export settings object.
                 ExcelOutputTextFormatFixedWidth format = new ExcelOutputTextFormatFixedWidth();
 
                 //Set the length of the row and the staring positions of each column
-                format.SetColumnLengths(16, 10, 16, 8, 1);
+                format.SetColumnLengths(16, 10, 16, 8, 8);
+                //Skip the header row.
+                format.SkipLinesBeginning = 1;
                 //Write header
-                format.Header = "Name            Date Amount          Percent Category";
+                format.Header = "Name            Date      Amount          Percent Category";
 
                 //Export the range to fixed width text file.
-                sheet.Cells["A1:E6"].SaveToText(FileUtil.GetCleanFileInfo("2.3.2-ExportedFromEPPlus.txt"), format);
+                sheet.Cells["A1:E6"].SaveToText(FileUtil.GetCleanFileInfo("2.3.2-ExportedLengthsFromEPPlus.txt"), format);
             }
-
 
 
 
@@ -109,19 +108,21 @@ namespace EPPlusSamples._02_Import_and_export._03_Import_export_text_files
             {
                 Console.WriteLine("Exporting the file using column positions...");
                 //Load workbook and worksheet.
-                using var package = new ExcelPackage(/*Path*/);
-                var sheet = package.Workbook.Worksheets["FixedWidthPositions"];
+                using var package = new ExcelPackage(workbookFixedWidth);
+                var sheet = package.Workbook.Worksheets["Sheet1"];
 
                 //Create the export settings object.
                 ExcelOutputTextFormatFixedWidth format = new ExcelOutputTextFormatFixedWidth();
 
                 //Set the length of the row and the staring positions of each column
-                format.SetColumnPositions(51, 0, 16, 26, 42, 50);
+                format.SetColumnPositions(59, 0, 16, 26, 42, 50);
+                //Skip the header row.
+                format.SkipLinesBeginning = 1;
                 //Write header
-                format.Header = "Name            Date Amount          Percent Category";
+                format.Header = "Name            Date      Amount          Percent Category";
 
                 //Export the range to fixed width text file.
-                sheet.Cells["A1:E6"].SaveToText(FileUtil.GetCleanFileInfo("2.3.2-ExportedFromEPPlus.txt"), format);
+                sheet.Cells["A1:E6"].SaveToText(FileUtil.GetCleanFileInfo("2.3.2-ExportedPositionsFromEPPlus.txt"), format);
             }
         }
     }

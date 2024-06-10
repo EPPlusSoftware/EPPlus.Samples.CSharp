@@ -26,8 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EPPlus7\EPPlus\src\EPPlus\EPPlus.csproj" />
+    <ProjectReference Include="..\epplus\src\EPPlus\EPPlus.csproj" />
   </ItemGroup>
+
 
   <ItemGroup>
     <None Update=".gitignore">
