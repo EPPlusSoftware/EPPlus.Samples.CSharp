@@ -24,6 +24,7 @@ using OfficeOpenXml.Table;
 using System.Data;
 using System.IO;
 using OfficeOpenXml.Drawing.Chart.ChartEx;
+using EPPlusSamples._05_Drawings_charts_and_themes._03_Charts_and_themes;
 
 namespace EPPlusSamples.DrawingsChartsAndThemes
 {
@@ -95,6 +96,9 @@ namespace EPPlusSamples.DrawingsChartsAndThemes
 
                 //Add an area chart using a chart template (chrx file)
                 await ChartTemplateSample.AddAreaChart(package);
+
+                //Add a stackedColumn chart with custom labels
+                BarColumnChartsWithManualLayout.Add(package);
 
                 //Save our new workbook in the output directory and we are done!
                 package.SaveAs(xlFile);
