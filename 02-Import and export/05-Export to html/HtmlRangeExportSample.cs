@@ -16,12 +16,15 @@ namespace EPPlusSamples
             var outputFolder = FileUtil.GetDirectoryInfo("HtmlOutput");
 
             await ExportGettingStartedAsync(outputFolder);
-            
+
             ExportSalesReport(outputFolder);
 
             await ExcludeCssAsync(outputFolder);
 
             ExportMultipleRanges(outputFolder);
+
+            ExportRangeWithConditionalFormatting(outputFolder);
+            ExportRangeWithAdvancedConditionalFormatting(outputFolder);
         }
 
         private static async Task ExportGettingStartedAsync(DirectoryInfo outputFolder)
@@ -31,10 +34,10 @@ namespace EPPlusSamples
             {
                 var ws = p.Workbook.Worksheets["Inventory"];
                 //Will create the html exporter for min and max bounds of the worksheet (ws.Dimensions)
-                var exporter = ws.Cells.CreateHtmlExporter();   
-                
+                var exporter = ws.Cells.CreateHtmlExporter();
+
                 //Get the html and styles in one call. 
-                var html=await exporter.GetSinglePageAsync();
+                var html = await exporter.GetSinglePageAsync();
                 await File.WriteAllTextAsync(FileUtil.GetFileInfo(outputFolder, "2.5-Range-GettingStarted.html", true).FullName,
                     html);
             }
@@ -79,7 +82,7 @@ namespace EPPlusSamples
         private static async Task ExcludeCssAsync(DirectoryInfo outputFolder)
         {
             //Start by using the excel file generated in sample 20
-            using (var p = new ExcelPackage(FileUtil.GetFileInfo("Workbooks","2.5-CreateAFileSystemReport.xlsx")))
+            using (var p = new ExcelPackage(FileUtil.GetFileInfo("Workbooks", "2.5-CreateAFileSystemReport.xlsx")))
             {
                 var ws = p.Workbook.Worksheets[0];
                 var range = ws.Cells[1, 1, 5, ws.Dimension.End.Column];
@@ -96,7 +99,7 @@ namespace EPPlusSamples
         private static void ExportMultipleRanges(DirectoryInfo outputFolder)
         {
             //Start by using the excel file generated in sample 15
-            using (var p = new ExcelPackage(FileUtil.GetFileInfo("Workbooks","2.5-ChartsAndThemes.xlsx")))
+            using (var p = new ExcelPackage(FileUtil.GetFileInfo("Workbooks", "2.5-ChartsAndThemes.xlsx")))
             {
                 //Now we will use the sample 15 and read two ranges from two different worksheets and combine them to use the same CSS.
                 //To do so we create an HTML exporter on the workbook level and adds the ranges we want to use.
@@ -129,6 +132,84 @@ namespace EPPlusSamples
                 var htmlTemplate = "<html>\r\n<head>\r\n<style type=\"text/css\">\r\n{0}</style></head>\r\n<body>\r\n{1}<hr>{2}<hr>{3}</body>\r\n</html>";
                 File.WriteAllText(FileUtil.GetFileInfo(outputFolder, "2.5-Range-MultipleRanges.html", true).FullName,
                     string.Format(htmlTemplate, css, html3D, htmlStock, tblHtml));
+            }
+        }
+
+        private static void ExportRangeWithConditionalFormatting(DirectoryInfo outputFolder)
+        {
+            //Start by using the excel file generated in sample 3.2
+            using (var p = new ExcelPackage(FileUtil.GetFileInfo("Workbooks", "3.2-ConditionalFormattings.xlsx")))
+            {
+                var averagesSheet = p.Workbook.Worksheets["AverageExamples"];
+
+                //We must call calculate to ensure conditional formattings can calculate what cells should be formatted and how.
+                averagesSheet.Calculate();
+
+                //Create the exporter for the relevant range
+                var exporter = averagesSheet.Cells["A1:B21"].CreateHtmlExporter();
+
+                //Set settings for the exporter
+                var settings = exporter.Settings;
+                settings.Pictures.Include = ePictureInclude.Include;
+                settings.Minify = false;
+                settings.SetColumnWidth = true;
+                settings.SetRowHeight = true;
+                settings.Pictures.AddNameAsId = true;
+
+                //Export both css and html in one go
+                var html = exporter.GetSinglePage();
+
+                //Write the results to file
+                File.WriteAllText(FileUtil.GetFileInfo(outputFolder, "3.2-ConditionalFormattingsAverages.html", true).FullName,
+                    html);
+            }
+        }
+
+        private static void ExportRangeWithAdvancedConditionalFormatting(DirectoryInfo outputFolder)
+        {
+            //Start by using the excel file generated in sample 3.2
+            using (var p = new ExcelPackage(FileUtil.GetFileInfo("Workbooks", "3.2-ConditionalFormattings.xlsx")))
+            {
+                //Get a sheet with databars
+                var dataSheet = p.Workbook.Worksheets["Databars"];
+
+                //We must call calculate to ensure conditional formattings can calculate what cells should be formatted and how.
+                dataSheet.Calculate();
+
+                //Create the exporter for the relevant range
+                var exporter = dataSheet.Cells["A1:H21"].CreateHtmlExporter();
+
+                //Set settings for the exporter
+                var settings = exporter.Settings;
+                settings.Minify = false;
+                settings.SetColumnWidth = true;
+                settings.SetRowHeight = true;
+
+                //Export both css and html in one go
+                var html = exporter.GetSinglePage();
+
+                //Write the results to file
+                File.WriteAllText(FileUtil.GetFileInfo(outputFolder, "3.2-ConditionalFormattingsDatabars.html", true).FullName,
+                    html);
+
+                //Get sheet with iconsets
+                var iconsetSheet = p.Workbook.Worksheets["Iconsets"];
+
+                //Please Note: Since this sheet includes a Rand() formula the icons in the D column will change each time the samples are executing.
+                //Therefore it may not match the icons in the worksheet exactly. The icons in G column will always be the same.
+                iconsetSheet.Calculate();
+
+                var iconExporter = iconsetSheet.Cells["A1:G14"].CreateHtmlExporter();
+
+                var iconExporterSettings = iconExporter.Settings;
+                iconExporterSettings.Minify = false;
+                iconExporterSettings.SetColumnWidth = true;
+                iconExporterSettings.SetRowHeight = true;
+
+                var iconHtml = iconExporter.GetSinglePage();
+
+                File.WriteAllText(FileUtil.GetFileInfo(outputFolder, "3.2-ConditionalFormattingsIconSets.html", true).FullName,
+                iconHtml);
             }
         }
     }

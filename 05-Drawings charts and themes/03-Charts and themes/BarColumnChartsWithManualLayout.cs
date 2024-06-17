@@ -7,6 +7,7 @@ using System.Text;
 using OfficeOpenXml.Drawing.Chart;
 using System.Data;
 using System.Drawing;
+using OfficeOpenXml.Table;
 
 namespace EPPlusSamples._05_Drawings_charts_and_themes._03_Charts_and_themes
 {
@@ -19,6 +20,7 @@ namespace EPPlusSamples._05_Drawings_charts_and_themes._03_Charts_and_themes
             var range = cSheet.Cells["A1:C3"];
             var table = cSheet.Tables.Add(range, "DataTable");
             table.ShowHeader = false;
+            table.SyncColumnNames(ApplyDataFrom.ColumnNamesToCells, true);
 
             range.Formula = "ROW() + COLUMN()";
 

@@ -59,8 +59,8 @@ namespace EPPlusSamples.ConditionalFormatting
             belowOrEqual.Style.Fill.PatternType = ExcelFillStyle.Solid;
             belowOrEqual.Style.Fill.BackgroundColor.Color = Color.DarkGreen;
 
-            //Not that when two properties conflict like belowEqual and aboveEqual on the background color the one with the lowest priority number "wins"
-            //Test switching them around and watch the A11 cell closely.
+            //Note that when two properties conflict like belowEqual and aboveEqual on the background color the one with the lowest priority number "wins"
+            //Test switching them around and watch the A11 cells closely.
             belowOrEqual.Priority = 2;
             aboveOrEqual.Priority = 1;
 
