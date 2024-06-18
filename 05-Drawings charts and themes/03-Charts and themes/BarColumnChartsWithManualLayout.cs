@@ -9,7 +9,7 @@ using System.Data;
 using System.Drawing;
 using OfficeOpenXml.Table;
 
-namespace EPPlusSamples._05_Drawings_charts_and_themes._03_Charts_and_themes
+namespace EPPlusSamples.DrawingsChartsAndThemes
 {
     public class BarColumnChartsWithManualLayout
     {
