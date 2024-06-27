@@ -24,7 +24,7 @@ using OfficeOpenXml.Table;
 using System.Data;
 using System.IO;
 using OfficeOpenXml.Drawing.Chart.ChartEx;
-using EPPlusSamples._05_Drawings_charts_and_themes._03_Charts_and_themes;
+using EPPlusSamples;
 
 namespace EPPlusSamples.DrawingsChartsAndThemes
 {
