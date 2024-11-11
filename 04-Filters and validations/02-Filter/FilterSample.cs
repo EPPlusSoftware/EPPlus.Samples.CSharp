@@ -135,6 +135,8 @@ namespace EPPlusSamples.FiltersAndValidations
             //Add a second filter on order value
             var colOrderValue = tbl.AutoFilter.Columns.AddCustomFilterColumn(6);
             colOrderValue.Filters.Add(new ExcelFilterCustomItem("500", eFilterOperator.GreaterThanOrEqual));
+
+            //Apply the filters.
             tbl.AutoFilter.ApplyFilter();
             range.AutoFitColumns(0);
         }
