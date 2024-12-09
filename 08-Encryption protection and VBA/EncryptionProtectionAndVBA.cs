@@ -13,6 +13,10 @@ namespace EPPlusSamples
             Console.WriteLine("Running sample 8.2-VBA");
             WorkingWithVbaSample.Run();
             SigningYourVBAProject.Run();
+
+            //Sample 8.3 shows how to sign workbooks
+            DigitalSignatureSample.Run();
+
             Console.WriteLine("Sample 8.2 created {0}", FileUtil.OutputDir.Name);
             Console.WriteLine();
         }

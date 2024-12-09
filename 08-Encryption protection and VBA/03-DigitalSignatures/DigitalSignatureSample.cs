@@ -1,8 +1,8 @@
-﻿using OfficeOpenXml;
-using System.Security.Cryptography.X509Certificates;
-using OfficeOpenXml.DigitalSignatures;
-using System.IO;
+﻿using System.IO;
+using OfficeOpenXml;
 using OfficeOpenXml.Drawing;
+using OfficeOpenXml.DigitalSignatures;
+using System.Security.Cryptography.X509Certificates;
 
 namespace EPPlusSamples.EncryptionProtectionAndVba
 {
@@ -36,6 +36,9 @@ namespace EPPlusSamples.EncryptionProtectionAndVba
                 //Add a digital signature and sign it with the certificate
                 var digitalSignature = wb.DigitialSignatures.AddSignature(cert);
 
+                //It is recommended to set a more secure digestmethod. As default is SHA-1.
+                digitalSignature.SetDigestMethod(DigitalSignatureHashAlgorithm.SHA512);
+
                 FileInfo fi = FileUtil.GetCleanFileInfo("8.3-01-SignWorkbook.xlsx");
                 pck.SaveAs(fi);
 
@@ -50,10 +53,13 @@ namespace EPPlusSamples.EncryptionProtectionAndVba
             var certFile = FileUtil.GetFileInfo("08-Encryption Protection and VBA\\02-VBA", "SampleCertificate.pfx");
 
             //Excel lists different certificates for you.
-            //If on windows you should be able to access the same list like this:
+            //You should be able to access the same list like this:
             //X509Store store = new X509Store(StoreLocation.CurrentUser);
             //store.Open(OpenFlags.ReadOnly);
             //var certAlt = store.Certificates[0];
+
+            //If it doesn't work please double-check that you have certificates stored correctly
+            //and double check the .net X509Store implementation for your OS
 
             return new X509Certificate2(certFile.FullName, "EPPlus");
         }
@@ -76,8 +82,13 @@ namespace EPPlusSamples.EncryptionProtectionAndVba
                 //This represents the 'details' button in excel for example:
                 var details = digitalSignature.Details;
 
-                details.SignerRoleTitle = "Detective";
-                details.Address1 = "221b, Baker Street";
+                details.SignerRoleTitle = "Developer";
+                details.Address1 = "ExampleStreet 2";
+                details.Address2 = "Floor 2";
+                details.ZIPorPostalCode = "114 51";
+                details.City = "Stockholm";
+                details.CountryOrRegion = "Sweden";
+                details.StateOrProvince = "Stockholm";
 
                 //The signature xml is not truly created until after the file has been saved
                 bool isTheSignatureValid = digitalSignature.IsValid;
@@ -104,7 +115,7 @@ namespace EPPlusSamples.EncryptionProtectionAndVba
                 signatureLine.Signer = "FirstName LastName";
                 signatureLine.Title = "Engineer";
                 signatureLine.Email = "FirstName@epplussoftware.com";
-                signatureLine.SigningInstructions = "Please mr. LastName. Check and approve this document.";
+                signatureLine.SigningInstructions = "Please mr.LastName check and approve this document.";
                 signatureLine.AllowComments = true;
                 signatureLine.ShowSignDate = false;
 
@@ -128,12 +139,13 @@ namespace EPPlusSamples.EncryptionProtectionAndVba
                 var ws = wb.Worksheets[0];
 
                 ws.Name = "SignedWorksheet";
-                var SignatureLine = ws.SignatureLines[0];
 
                 var cert = GetCert();
 
+                var signatureLine = ws.SignatureLines[0];
+
                 //Sign the signature line from the previous sample
-                SignatureLine.AsSignatureLine.Sign(cert, "FirstName");
+                signatureLine.AsSignatureLine.Sign(cert, "FirstName LastName");
 
                 //The reason for '.AsSignatureline' is because Signature Line is actually a child-class.
                 //The parent class is SignatureLineStamp A signatureLineStamp can only be signed with an image and has a different look
@@ -147,6 +159,7 @@ namespace EPPlusSamples.EncryptionProtectionAndVba
                 var sampleImage = FileUtil.GetFileInfo("08-Encryption Protection and VBA\\03-DigitalSignatures", "SignatureImgExample.bmp");
                 var image = new ExcelImage(sampleImage);
                 stamp.Sign(cert, image);
+
 
                 //Stamps can also be resized and moved
                 stamp.From.Column = 2;
