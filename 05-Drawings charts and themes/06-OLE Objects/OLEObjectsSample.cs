@@ -45,7 +45,7 @@ namespace EPPlusSamples._05_Drawings_charts_and_themes._06_OLE_Objects
             using var p2 = new ExcelPackage(newWorkbook);
             var ws2 = p2.Workbook.Worksheets.Add("Sheet 2");
             //Link the file using AddOleObject method on the drawing.
-            var LinkedPDF = ws2.Drawings.AddOleObject("MyPDF", myPDF, true);
+            var LinkedPDF = ws2.Drawings.AddOleObject("MyPDF", myPDF, o => o.LinkToFile = true);
             //Save the workbook
             p2.SaveAs(newWorkbook);
 
@@ -54,15 +54,13 @@ namespace EPPlusSamples._05_Drawings_charts_and_themes._06_OLE_Objects
             //Create a workbook and a worksheet.
             using var p3 = new ExcelPackage(newWorkbook);
             var ws3 = p3.Workbook.Worksheets.Add("Sheet 3");
-            //Create parameters object.
-            var parameters = new ExcelOleObjectParameters()
+            //Link the file using AddOleObject method on the drawing with additional parameters.
+            var LinkedPDF2 = ws3.Drawings.AddOleObject("MyPDF", myPDF, o =>
             {
-                LinkToFile = true,
-                DisplayAsIcon = true,
-                Extension = ".pdf",
-            };
-            //Link the file using AddOleObject method on the drawing.
-            var LinkedPDF2 = ws3.Drawings.AddOleObject("MyPDF", myPDF, parameters);
+                o.DisplayAsIcon = true;
+                o.LinkToFile = true;
+                o.Extension = ".pdf";
+            });
             //Save the workbook
             p3.SaveAs(newWorkbook);
 
@@ -72,7 +70,12 @@ namespace EPPlusSamples._05_Drawings_charts_and_themes._06_OLE_Objects
             using var p4 = new ExcelPackage(newWorkbook);
             var ws4 = p4.Workbook.Worksheets.Add("Sheet 4");
             //Link the file using AddOleObject method on the drawing.
-            var txt = ws4.Drawings.AddOleObject("MyText", myTxt, false, true, myIcon);
+            var txt = ws4.Drawings.AddOleObject("MyText", myTxt, o =>
+            {
+                o.DisplayAsIcon = true;
+                o.LinkToFile = true;
+                o.Icon = new ExcelImage(myIcon);
+            });
             //Save the workbook
             p4.SaveAs(newWorkbook);
 
