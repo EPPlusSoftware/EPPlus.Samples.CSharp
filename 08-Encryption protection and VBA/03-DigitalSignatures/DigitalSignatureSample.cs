@@ -34,7 +34,7 @@ namespace EPPlusSamples.EncryptionProtectionAndVba
                 var cert = new X509Certificate2(certFile.FullName, "EPPlus");
 
                 //Add a digital signature and sign it with the certificate
-                var digitalSignature = wb.DigitialSignatures.AddSignature(cert);
+                var digitalSignature = wb.DigitialSignatures.Add(cert);
 
                 //It is recommended to set a more secure digestmethod. As default is SHA-1.
                 digitalSignature.SetDigestMethod(DigitalSignatureHashAlgorithm.SHA512);
@@ -76,7 +76,10 @@ namespace EPPlusSamples.EncryptionProtectionAndVba
 
                 //The method to add a signature also includes optional parameters for the comments commitment type and reason for signing
                 //That represent the 'commitment type' and 'purpose for signing this document' fields from Excel.
-                var digitalSignature = wb.DigitialSignatures.AddSignature(cert, CommitmentType.Approved, "My reason for signing");
+                var digitalSignature = wb.DigitialSignatures.Add(cert);
+
+                digitalSignature.CommitmentTyping = CommitmentType.Approved;
+                digitalSignature.PurposeForSigning = "My reason for signing";
 
                 //You can also add signer details via the Details property.
                 //This represents the 'details' button in excel for example:
@@ -85,7 +88,7 @@ namespace EPPlusSamples.EncryptionProtectionAndVba
                 details.SignerRoleTitle = "Developer";
                 details.Address1 = "ExampleStreet 2";
                 details.Address2 = "Floor 2";
-                details.ZIPorPostalCode = "114 51";
+                details.ZipOrPostalCode = "114 51";
                 details.City = "Stockholm";
                 details.CountryOrRegion = "Sweden";
                 details.StateOrProvince = "Stockholm";
@@ -109,7 +112,7 @@ namespace EPPlusSamples.EncryptionProtectionAndVba
 
                 //From a worksheet you can create a signatureline
                 //A visual representation via a vmldrawing object for signing.
-                var signatureLine = ws.AddSignatureLine();
+                var signatureLine = ws.SignatureLines.Add();
 
                 //As in excel, you can set a few options for a suggested signer.
                 signatureLine.Signer = "FirstName LastName";
@@ -145,12 +148,12 @@ namespace EPPlusSamples.EncryptionProtectionAndVba
                 var signatureLine = ws.SignatureLines[0];
 
                 //Sign the signature line from the previous sample
-                signatureLine.AsSignatureLine.Sign(cert, "FirstName LastName");
+                signatureLine.AsSignatureLine.SignWithText(cert, "FirstName LastName");
 
                 //The reason for '.AsSignatureline' is because Signature Line is actually a child-class.
                 //The parent class is SignatureLineStamp A signatureLineStamp can only be signed with an image and has a different look
                 //Let's add one and sign that too
-                var stamp = ws.AddSignatureLineStamp();
+                var stamp = ws.SignatureLines.AddStamp();
 
                 stamp.Signer = "FirstName LastName";
                 stamp.Title = "Engineer";
@@ -158,7 +161,7 @@ namespace EPPlusSamples.EncryptionProtectionAndVba
                 //Note that only .bmp fileformat are supported for digital signatures
                 var sampleImage = FileUtil.GetFileInfo("08-Encryption Protection and VBA\\03-DigitalSignatures", "SignatureImgExample.bmp");
                 var image = new ExcelImage(sampleImage);
-                stamp.Sign(cert, image);
+                stamp.SignWithImage(cert, image);
 
 
                 //Stamps can also be resized and moved
@@ -169,8 +172,8 @@ namespace EPPlusSamples.EncryptionProtectionAndVba
 
                 //Naturally a non-stamp can also be signed with an image.
                 //Let's add one so we can see all variations.
-                var SignatureLineTwo = ws.AddSignatureLine();
-                SignatureLineTwo.Sign(cert, image);
+                var SignatureLineTwo = ws.SignatureLines.Add();
+                SignatureLineTwo.SignWithImage(cert, image);
                 
                 pck.SaveAs(FileUtil.GetCleanFileInfo("8.3-04-SignSignatureLines.xlsx"));
             }
