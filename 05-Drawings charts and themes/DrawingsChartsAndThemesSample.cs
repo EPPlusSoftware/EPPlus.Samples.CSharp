@@ -1,4 +1,5 @@
-﻿using EPPlusSamples.DrawingsChartsAndThemes;
+﻿using EPPlusSamples._05_Drawings_charts_and_themes._06_OLE_Objects;
+using EPPlusSamples.DrawingsChartsAndThemes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,8 +33,11 @@ namespace EPPlusSamples
             //Sample 5.4 - Shows how to add sparkline charts.
             SparkLinesSample.Run();
 
-            //Sample 26 - Form Controls & Drawing Groups
+            //Sample 5.5 - Form Controls & Drawing Groups
             FormControlsSample.Run();
+
+            //Sample 5.6 - OLE objects
+            OLEObjectsSample.Run();
         }
     }
 }

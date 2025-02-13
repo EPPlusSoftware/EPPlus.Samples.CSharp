@@ -41,17 +41,23 @@ namespace EPPlusSamples.TablesPivotTablesAndSlicers
             
             var pivotTable1 = wsPivot.PivotTables.Add(wsPivot.Cells["A15"], wsSource.Cells[wsSource.Dimension.Address], "PivotTable1");
             pivotTable1.RowFields.Add(pivotTable1.Fields["CompanyName"]);
-            pivotTable1.DataFields.Add(pivotTable1.Fields["OrderValue"]);
-            pivotTable1.DataFields.Add(pivotTable1.Fields["Tax"]);
-            pivotTable1.DataFields.Add(pivotTable1.Fields["Freight"]);
+            var dv1 = pivotTable1.DataFields.Add(pivotTable1.Fields["OrderValue"]);
+            dv1.Format = "#,##0";
+            var dv2 = pivotTable1.DataFields.Add(pivotTable1.Fields["Tax"]);
+            dv2.Format = "#,##0";
+            var dv3 = pivotTable1.DataFields.Add(pivotTable1.Fields["Freight"]);
+            dv3.Format = "#,##0";
             pivotTable1.DataOnRows = false;
 
             //To connect a slicer to multiple pivot tables the tables need to use the same pivot table cache, so we use pivotTable1's cache as source to pivotTable2...
             var pivotTable2 = wsPivot.PivotTables.Add(wsPivot.Cells["F15"], pivotTable1.CacheDefinition, "PivotTable2");
             pivotTable2.RowFields.Add(pivotTable2.Fields["Country"]);
-            pivotTable2.DataFields.Add(pivotTable2.Fields["OrderValue"]);
-            pivotTable2.DataFields.Add(pivotTable2.Fields["Tax"]);
-            pivotTable2.DataFields.Add(pivotTable2.Fields["Freight"]);
+            dv1 = pivotTable2.DataFields.Add(pivotTable2.Fields["OrderValue"]);
+            dv1.Format = "#,##0";
+            dv2 = pivotTable2.DataFields.Add(pivotTable2.Fields["Tax"]);
+            dv2.Format = "#,##0";
+            dv3 = pivotTable2.DataFields.Add(pivotTable2.Fields["Freight"]);
+            dv3.Format = "#,##0";
             pivotTable2.DataOnRows = false;
 
             var slicer1 = pivotTable1.Fields["Country"].AddSlicer();
@@ -88,8 +94,8 @@ namespace EPPlusSamples.TablesPivotTablesAndSlicers
                     {
                         var range = worksheet1.Cells["A14"].LoadFromDataReader(sqlReader, true, "tblSalesData", OfficeOpenXml.Table.TableStyles.Medium6);
                         var tbl = worksheet1.Tables.GetFromRange(range);
-                        range.Offset(1, 4, range.Rows - 1, 1).Style.Numberformat.Format = "yyyy-MM-dd";
-                        range.Offset(1, 5, range.Rows - 1, 3).Style.Numberformat.Format = "#,##0";
+                        range.Offset(1, 5, range.Rows - 1, 1).Style.Numberformat.Format = "yyyy-MM-dd";
+                        range.Offset(1, 6, range.Rows - 1, 1).Style.Numberformat.Format = "#,##0";
                         range.AutoFitColumns();
 
                         //You can either add a slicer via the table column...
@@ -133,9 +139,12 @@ namespace EPPlusSamples.TablesPivotTablesAndSlicers
 
             var pivotTable = wsPivot.PivotTables.Add(wsPivot.Cells["A1"], wsSource.Cells[wsSource.Dimension.Address], "PivotTable1");
             pivotTable.RowFields.Add(pivotTable.Fields["CompanyName"]);
-            pivotTable.DataFields.Add(pivotTable.Fields["OrderValue"]);
-            pivotTable.DataFields.Add(pivotTable.Fields["Tax"]);
-            pivotTable.DataFields.Add(pivotTable.Fields["Freight"]);
+            var dv1=pivotTable.DataFields.Add(pivotTable.Fields["OrderValue"]);
+            dv1.Format = "#,##0";
+            var dv2 = pivotTable.DataFields.Add(pivotTable.Fields["Tax"]);
+            dv2.Format = "#,##0";
+            var dv3 = pivotTable.DataFields.Add(pivotTable.Fields["Freight"]);
+            dv3.Format = "#,##0";
             pivotTable.DataOnRows = false;
 
             var slicer1 = pivotTable.Fields["Name"].AddSlicer();

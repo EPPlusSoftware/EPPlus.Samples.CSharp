@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>EPPlusSamples</RootNamespace>
   </PropertyGroup>
 
@@ -15,11 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>    
-    <PackageReference Include="EPPlus" Version="7.6.0" />    
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Data.Common" Version="4.3.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
     <PackageReference Include="System.Data.SQLite" Version="1.0.118" />
+    <PackageReference Include="System.Drawing.Common" Version="9.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Epplus7\EPPlus\src\EPPlus\EPPlus.csproj" />
+    <ProjectReference Include="..\EPPlus\src\EPPlus\EPPlus.csproj" />
   </ItemGroup>
 
 

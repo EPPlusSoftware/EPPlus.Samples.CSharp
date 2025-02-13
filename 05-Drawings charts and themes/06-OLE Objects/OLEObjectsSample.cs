@@ -11,6 +11,8 @@
   01/01/2025         EPPlus Software AB           Initial release EPPlus 8
  *************************************************************************************************/
 using OfficeOpenXml;
+using OfficeOpenXml.Drawing;
+using OfficeOpenXml.Drawing.OleObject;
 using System.Collections.Generic;
 using System.IO;
 
@@ -21,13 +23,13 @@ namespace EPPlusSamples._05_Drawings_charts_and_themes._06_OLE_Objects
     /// </summary>
     public static class OLEObjectsSample
     {
-        public static void RunSample()
+        public static void Run()
         {
             var myPDF = FileUtil.GetFileInfo("05-Drawings charts and themes\\06-OLE Objects", "MyPDF.pdf");
             var myWord = FileUtil.GetFileInfo("05-Drawings charts and themes\\06-OLE Objects", "MyWord.docx");
             var myTxt = FileUtil.GetFileInfo("05-Drawings charts and themes\\06-OLE Objects", "MyTextDocument.txt");
             var myIcon = FileUtil.GetFileInfo("05-Drawings charts and themes\\06-OLE Objects", "SampleIcon.bmp");
-            FileInfo newWorkbook = FileUtil.GetCleanFileInfo(@"06-OLE Objects Sample Workbook.xlsx");
+            FileInfo newWorkbook = FileUtil.GetCleanFileInfo(@"5.6-OLE Objects.xlsx");
 
 
             /*    Embedding a file.    */
@@ -81,14 +83,14 @@ namespace EPPlusSamples._05_Drawings_charts_and_themes._06_OLE_Objects
 
 
             /*    Copy OLE Object    */
-            //Create a workbook, get worksheet and create new worksheet.
+            //Create a workbook, get the worksheet and create a new worksheet.
             using var p5 = new ExcelPackage(newWorkbook);
             var ws1 = p5.Workbook.Worksheets[0];
             var ws5 = p5.Workbook.Worksheets.Add("Sheet 5");
             //Get OLE Object.
             var newPDF = ws1.Drawings[0] as ExcelOleObject;
             //Copy OLE Object to a new worksheet.
-            var copy = ws1.Drawings.Copy(ws5, 1, 4);
+            var copy = newPDF.Copy(ws5, 1, 4);
             //Save the workbook
             p5.SaveAs(newWorkbook);
 
@@ -96,11 +98,15 @@ namespace EPPlusSamples._05_Drawings_charts_and_themes._06_OLE_Objects
             /*    Delete OLE Object    */
             //Create a workbook and get worksheet.
             using var p6 = new ExcelPackage(newWorkbook);
-            ws1 = p6.Workbook.Worksheets[0];
-            //Get OLE Object.
+            var ws6 = p6.Workbook.Worksheets.Add("Delete OLE object");
+            //Get the OLE Object from worksheet 1.
             var myPdfDoc = ws1.Drawings[0] as ExcelOleObject;
-            //Copy OLE Object to a new worksheet.
-            ws1.Drawings.Remove(myPdfDoc);
+
+            //Copy the OLE Object to a new worksheet.
+            var copyToDelete = myPdfDoc.Copy(ws6, 1, 4);
+            //Now remove the OLE Object from the worksheet.
+            ws6.Drawings.Remove(copyToDelete);
+
             //Save the workbook
             p6.SaveAs(newWorkbook);
         }
