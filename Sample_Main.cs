@@ -25,7 +25,7 @@ namespace EPPlusSamples
 		{
 			try
 			{
-                //EPPlus 5 uses a dual license model. This requires you to specifiy the License you are using to be able to use the library. 
+                //EPPlus 5 and later uses a dual license model. This requires you to specifiy the License you are using to be able to use the library. 
                 //This sample sets the LicenseContext in the appsettings.json file. An alternative is the commented row below.
                 //ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
                 //See https://epplussoftware.com/Developers/LicenseException for more info.
@@ -48,6 +48,7 @@ namespace EPPlusSamples
             {
                 Console.WriteLine("Error: {0}", ex.Message);
 			}
+
             var prevColor = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"Genereted sample workbooks can be found in {FileUtil.OutputDir.FullName}");

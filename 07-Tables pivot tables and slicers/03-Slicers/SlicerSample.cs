@@ -165,8 +165,8 @@ namespace EPPlusSamples.TablesPivotTablesAndSlicers
                     {
                         var range = wsSource.Cells["A1"].LoadFromDataReader(sqlReader, true);
                         range.Offset(0, 0, 1, range.Columns).Style.Font.Bold = true;
-                        range.Offset(1, 4, range.Rows - 1, 1).Style.Numberformat.Format = "yyyy-MM-dd hh:mm";
-                        range.Offset(1, 5, range.Rows - 1, 3).Style.Numberformat.Format = "#,##0";
+                        range.Offset(1, 5, range.Rows - 1, 1).Style.Numberformat.Format = "yyyy-MM-dd hh:mm";
+                        range.Offset(1, 6, range.Rows - 1, 1).Style.Numberformat.Format = "#,##0";
                     }
                 }
                 sqlConn.Close();
