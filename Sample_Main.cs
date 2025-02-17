@@ -10,9 +10,11 @@
  *************************************************************************************************
   01/27/2020         EPPlus Software AB           Initial release EPPlus 5
  *************************************************************************************************/
+using EPPlusSamples._05_Drawings_charts_and_themes._06_OLE_Objects;
 using EPPlusSamples.ConditionalFormatting;
 using EPPlusSamples.DrawingsChartsAndThemes;
 using EPPlusSamples.FormulaCalculation;
+using OfficeOpenXml;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -26,12 +28,13 @@ namespace EPPlusSamples
 			try
 			{
                 //EPPlus 5 and later uses a dual license model. This requires you to specifiy the License you are using to be able to use the library. 
-                //This sample sets the LicenseContext in the appsettings.json file. An alternative is the commented row below.
-                //ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-                //See https://epplussoftware.com/Developers/LicenseException for more info.
+                //This sample sets the License in the appsettings.json file. An alternative is the commented row below. If you have a commercial license you can also set it using the License.SetCommercial method.
+                //ExcelPackage.License.SetNonCommercialPersonal("Your Name");
+                //See https://epplussoftware.com/Developers/LicenseNotSetException for more info.
 
                 //Set the output directory to the SampleApp folder where the app is running from. 
                 FileUtil.OutputDir = new DirectoryInfo($"{AppDomain.CurrentDomain.BaseDirectory}SampleApp");
+
                 await WorkbookWorksheetAndRangesSamples.RunAsync();
                 await ImportAndExportSamples.RunAsync();
                 StylingBasics.Run();
@@ -43,7 +46,7 @@ namespace EPPlusSamples
                 FormulaCalculationSample.Run();
                 await TablesPivotTableAndSlicersSample.RunAsync();
                 EncryptionProtectionAndVBASample.Run();
-            }            
+            }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: {0}", ex.Message);

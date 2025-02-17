@@ -117,7 +117,6 @@ namespace EPPlusSamples.EncryptionProtectionAndVba
                 list3.ShowErrorMessage = true;
                 list3.Error = "Please select a value from the list";
 
-
                 //Save, and the template is ready for use
                 package.Save();
 

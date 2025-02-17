@@ -38,6 +38,9 @@ namespace EPPlusSamples
 
             //Sample 5.6 - OLE objects
             OLEObjectsSample.Run();
+
+            //Sample 5.7 - In-cell Pictures.
+            InCellPicuresSample.Run();
         }
     }
 }
