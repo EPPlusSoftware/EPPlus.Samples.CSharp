@@ -40,7 +40,7 @@ namespace EPPlusSamples
             OLEObjectsSample.Run();
 
             //Sample 5.7 - In-cell Pictures.
-            InCellPicuresSample.Run();
+            InCellPicturesSample.Run();
         }
     }
 }

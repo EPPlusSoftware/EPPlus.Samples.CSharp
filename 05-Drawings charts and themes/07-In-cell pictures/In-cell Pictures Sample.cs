@@ -44,7 +44,7 @@ namespace EPPlusSamples._05_Drawings_charts_and_themes._06_OLE_Objects
                     var imageBytes = image.ImageBytes;
                 }
                         
-                FileInfo newWorkbook = FileUtil.GetCleanFileInfo(@"5.7-InCellPicures.xlsx");
+                FileInfo newWorkbook = FileUtil.GetCleanFileInfo(@"5.7-InCellPictures.xlsx");
                 package.SaveAs(newWorkbook);
             }
         }
