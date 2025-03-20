@@ -151,7 +151,10 @@ ___
 [Encryption and Protection]: </08-Encryption protection and VBA/01-Encryption and protection/Readme.md/>
 [VBA]: </08-Encryption protection and VBA/02-VBA/Readme.md/>
 
+Also see wiki on https://github.com/EPPlusSoftware/EPPlus/wiki for more details
+
 ### Output files
 The samples above produces some workbooks - the name of each workbook indicates which sample that generated it. These workbooks are located in a subdirectory - named "SampleApp" - to the output directory of the sample project.
 
-Also see wiki on https://github.com/EPPlusSoftware/EPPlus/wiki for more details
+### Feedback and issues in the sample project.
+If you have feedback or want to report and issue in the sample project, please use the [EPPlus issue tracker](https://github.com/EPPlusSoftware/EPPlus/issues)
