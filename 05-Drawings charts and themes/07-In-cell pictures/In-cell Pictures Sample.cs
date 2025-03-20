@@ -16,12 +16,12 @@ using OfficeOpenXml.Drawing.OleObject;
 using System.Collections.Generic;
 using System.IO;
 
-namespace EPPlusSamples._05_Drawings_charts_and_themes._06_OLE_Objects
+namespace EPPlusSamples
 {
     /// <summary>
     /// This sample shows how to work with in-cell picures directly and via formulas.
     /// </summary>
-    public static class InCellPicuresSample
+    public static class InCellPicturesSample
     {
         public static void Run()
         {

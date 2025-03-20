@@ -40,7 +40,7 @@ namespace EPPlusSamples._05_Drawings_charts_and_themes._06_OLE_Objects
             var EmbeddedWord  = ws.Drawings.AddOleObject("MyWord", myWord);
             //Save the workbook
             p.SaveAs(newWorkbook);
-
+            
 
             /*    Link a file.    */
             //Create a workbook and a worksheet.
@@ -48,12 +48,12 @@ namespace EPPlusSamples._05_Drawings_charts_and_themes._06_OLE_Objects
             var ws2 = p2.Workbook.Worksheets.Add("Sheet 2");
             //Link the file using AddOleObject method on the drawing.
             var LinkedPDF = ws2.Drawings.AddOleObject("MyPDF", myPDF, o => o.LinkToFile = true);
+
             //Save the workbook
             p2.SaveAs(newWorkbook);
 
-
-            /*    Link a file with ExcelOleObjectParameters.    */
-            //Create a workbook and a worksheet.
+            /* Link a file with ExcelOleObjectParameters.    */
+            // Create a workbook and a worksheet.
             using var p3 = new ExcelPackage(newWorkbook);
             var ws3 = p3.Workbook.Worksheets.Add("Sheet 3");
             //Link the file using AddOleObject method on the drawing with additional parameters.
@@ -63,6 +63,7 @@ namespace EPPlusSamples._05_Drawings_charts_and_themes._06_OLE_Objects
                 o.LinkToFile = true;
                 o.Extension = ".pdf";
             });
+
             //Save the workbook
             p3.SaveAs(newWorkbook);
 
