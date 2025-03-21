@@ -13,7 +13,6 @@
 using OfficeOpenXml;
 using OfficeOpenXml.Drawing;
 using OfficeOpenXml.Drawing.OleObject;
-using System.Collections.Generic;
 using System.IO;
 
 namespace EPPlusSamples._05_Drawings_charts_and_themes._06_OLE_Objects
@@ -109,6 +108,19 @@ namespace EPPlusSamples._05_Drawings_charts_and_themes._06_OLE_Objects
 
             //Save the workbook
             p6.SaveAs(newWorkbook);
+
+
+            /*    Create OLE Object using a stream */
+            //Create a workbook and create a new worksheet.
+            using var p7 = new ExcelPackage(newWorkbook);
+            var ws7 = p7.Workbook.Worksheets.Add("Sheet 7");
+            //Create the stream
+            using (FileStream fileStream = new FileStream(myPDF.FullName, FileMode.Open, FileAccess.Read))
+            {
+                //Add OLE Object using stream and filename.
+                var oleFromStream = ws7.Drawings.AddOleObject("MyPdfFromStream", fileStream, "MyPdfFromStream.pdf");
+            }
+            p7.SaveAs(newWorkbook);
         }
     }
 }
