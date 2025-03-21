@@ -61,7 +61,6 @@ namespace EPPlusSamples._05_Drawings_charts_and_themes._06_OLE_Objects
             {
                 o.DisplayAsIcon = true;
                 o.LinkToFile = true;
-                o.Extension = ".pdf";
             });
 
             //Save the workbook
