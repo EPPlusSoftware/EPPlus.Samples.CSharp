@@ -103,6 +103,8 @@ ___
 |5.3|[Charts And themes]|Demonstrates how to use various types of charts, chart styling and themes  |
 |5.4|[Sparklines]| demonstrates EPPlus support for Sparklines|
 |5.5|[Form controls] | demonstrates how to Add form controls, like drop-downs, buttons and radiobuttons to a worksheet and grouping drawings via VBA Macro|
+|5.6|[OLE Objects]| demonstrates how to work with OLE Objects in a workbook.|
+|5.7|[In-cell pictures]| demonstrates how to work with In-cell pictures, including usage of the IMAGE function.|
 
 
 [Shapes and images]: </05-Drawings charts and themes/01-Shapes and images/Readme.md/>
@@ -110,6 +112,8 @@ ___
 [Charts And themes]: </05-Drawings charts and themes/03-Charts and themes/Readme.md/>
 [Sparklines]: </05-Drawings charts and themes/04-Sparklines/Readme.md/>
 [Form controls]: </05-Drawings charts and themes/05-Form controls/Readme.md/>
+[OLE Objects]: <06-OLE Objects/Readme.md/>
+[In-cell pictures]: <07-In-cell pictures/Readme.md/>
 
 ___
 
@@ -147,9 +151,11 @@ ___
 |---|---|-----------------|
 |8.1|[Encryption and Protection]| Sample of encryption and password protection<img width=800/>|
 |8.2|[VBA]| An implementation of a Battleship game, implemented in Excel/VBA as an example of epplus+VBA interaction |
+|8.3|[Digital Signatures]| Demonstrates how to work with  |
 
 [Encryption and Protection]: </08-Encryption protection and VBA/01-Encryption and protection/Readme.md/>
 [VBA]: </08-Encryption protection and VBA/02-VBA/Readme.md/>
+[Digital Signatures]: <03-DigitalSignatures/Readme.md/>
 
 Also see wiki on https://github.com/EPPlusSoftware/EPPlus/wiki for more details
 
