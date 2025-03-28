@@ -112,8 +112,8 @@ ___
 [Charts And themes]: </05-Drawings charts and themes/03-Charts and themes/Readme.md/>
 [Sparklines]: </05-Drawings charts and themes/04-Sparklines/Readme.md/>
 [Form controls]: </05-Drawings charts and themes/05-Form controls/Readme.md/>
-[OLE Objects]: <06-OLE Objects/Readme.md/>
-[In-cell pictures]: <07-In-cell pictures/Readme.md/>
+[OLE Objects]: </05-Drawings charts and themes/06-OLE Objects/Readme.md/>
+[In-cell pictures]: </05-Drawings charts and themes/07-In-cell pictures/Readme.md/>
 
 ___
 
@@ -155,7 +155,7 @@ ___
 
 [Encryption and Protection]: </08-Encryption protection and VBA/01-Encryption and protection/Readme.md/>
 [VBA]: </08-Encryption protection and VBA/02-VBA/Readme.md/>
-[Digital Signatures]: <03-DigitalSignatures/Readme.md/>
+[Digital Signatures]: </08-Encryption protection and VBA/03-DigitalSignatures/Readme.md/>
 
 Also see wiki on https://github.com/EPPlusSoftware/EPPlus/wiki for more details
 
