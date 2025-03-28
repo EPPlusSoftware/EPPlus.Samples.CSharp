@@ -34,7 +34,7 @@ namespace EPPlusSamples.EncryptionProtectionAndVba
                 var cert = new X509Certificate2(certFile.FullName, "EPPlus");
 
                 //Add a digital signature and sign it with the certificate
-                var digitalSignature = wb.DigitialSignatures.Add(cert);
+                var digitalSignature = wb.DigitalSignatures.Add(cert);
 
                 //It is recommended to set a more secure digestmethod. As default is SHA-1.
                 digitalSignature.SetDigestMethod(DigitalSignatureHashAlgorithm.SHA512);
@@ -76,7 +76,7 @@ namespace EPPlusSamples.EncryptionProtectionAndVba
 
                 //The method to add a signature also includes optional parameters for the comments commitment type and reason for signing
                 //That represent the 'commitment type' and 'purpose for signing this document' fields from Excel.
-                var digitalSignature = wb.DigitialSignatures.Add(cert);
+                var digitalSignature = wb.DigitalSignatures.Add(cert);
 
                 digitalSignature.CommitmentTyping = CommitmentType.Approved;
                 digitalSignature.PurposeForSigning = "My reason for signing";
