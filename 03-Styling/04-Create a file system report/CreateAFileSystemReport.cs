@@ -46,7 +46,6 @@ namespace EPPlusSamples.Styling
                 return Size < other.Size ? -1 :
                             (Size > other.Size ? 1 : 0);
             }
-
 #endregion
         }
         static int _maxLevels;
@@ -129,9 +128,8 @@ namespace EPPlusSamples.Styling
             //Add the graph sheet
             AddGraphs(pck, row, dir.FullName);
 
-
             //Add a drawing with a HyperLink to the statistics sheet.
-            //We add the hyperlink as a drawing here, as we don't want it to move when we expand and collapse rows.. 
+            //We add the hyperlink as a drawing here, as we don't want it to move when we expand and collapse rows..
             var hl =ws.Drawings.AddShape("HyperLink", eShapeStyle.Rect);            
             hl.Hyperlink = new ExcelHyperLink("Statistics!A1", "Statistics");
             hl.SetPosition(13, 0, 9, 0);
@@ -144,7 +142,7 @@ namespace EPPlusSamples.Styling
             hl.Font.Fill.Color = Color.Blue;
 
             // Collaps children to level 1 for each row under the root.
-            ws.Rows[2].SetVisibleOutlineLevel(1); 
+            ws.Rows[2].SetVisibleOutlineLevel(1);
 
             //Printer settings
             ws.PrinterSettings.FitToPage = true;

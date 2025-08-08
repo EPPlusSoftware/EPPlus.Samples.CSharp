@@ -16,7 +16,7 @@ namespace EPPlusSamples.DrawingsChartsAndThemes
             var range = await LoadSalesFromDatabase(ws);
 
             //Region map charts 
-            var regionChart = ws.Drawings.AddRegionMapChart("RegionMapChart");
+            var regionChart = ws.Drawings.AddRegionMapChart("RegionMapChart");            
             regionChart.Title.Text = "Sales";
             regionChart.SetPosition(1, 0, 6, 0);
             regionChart.SetSize(1200, 600);

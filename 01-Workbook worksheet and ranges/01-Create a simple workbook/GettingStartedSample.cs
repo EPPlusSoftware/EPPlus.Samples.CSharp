@@ -85,15 +85,29 @@ namespace EPPlusSamples.WorkbookWorksheetAndRanges
 
                 worksheet.Cells.AutoFitColumns(0);  //Autofit columns for all cells
 
-                // Lets set the header text 
-                worksheet.HeaderFooter.OddHeader.CenteredText = "&24&U&\"Arial,Regular Bold\" Inventory";
+                // Lets set the header text. You can either use the Left/Centered or Right properties
+                var ht = worksheet.HeaderFooter.OddHeader.Centered.AddText(" Inventory");
+                ht.FontName = "Arial";
+                ht.FontSize = 24;
+                ht.Underline = true;
+                ht.Bold = true;
+
+                //...or set the text directly via the LeftAlignedText/CenteredText or RightAlignedText. In that case you need to set the codes in the text yourself. The codes are provided as constants in the ExcelHeaderFooter class. 
+                //worksheet.HeaderFooter.OddHeader.CenteredText = "&24&U&\"Arial,Regular Bold\" Inventory";
+
                 // Add the page number to the footer plus the total number of pages
-                worksheet.HeaderFooter.OddFooter.RightAlignedText =
-                    string.Format("Page {0} of {1}", ExcelHeaderFooter.PageNumber, ExcelHeaderFooter.NumberOfPages);
+                worksheet.HeaderFooter.OddFooter.RightAligned.AddText("Page ");
+                worksheet.HeaderFooter.OddFooter.RightAligned.AddPageNumber();
+                worksheet.HeaderFooter.OddFooter.RightAligned.AddText(" of ");
+                worksheet.HeaderFooter.OddFooter.RightAligned.AddNumberOfPages();
+                
+                //string.Format("Page {0} of {1}", ExcelHeaderFooter.PageNumber, ExcelHeaderFooter.NumberOfPages);
+                
                 // Add the sheet name to the footer
-                worksheet.HeaderFooter.OddFooter.CenteredText = ExcelHeaderFooter.SheetName;
+                worksheet.HeaderFooter.OddFooter.Centered.AddSheetName();
                 // Add the file path to the footer
-                worksheet.HeaderFooter.OddFooter.LeftAlignedText = ExcelHeaderFooter.FilePath + ExcelHeaderFooter.FileName;
+                worksheet.HeaderFooter.OddFooter.LeftAligned.AddFilePath();
+                worksheet.HeaderFooter.OddFooter.LeftAligned.AddFileName();
 
                 worksheet.PrinterSettings.RepeatRows = worksheet.Cells["1:2"];
                 worksheet.PrinterSettings.RepeatColumns = worksheet.Cells["A:G"];
@@ -102,7 +116,7 @@ namespace EPPlusSamples.WorkbookWorksheetAndRanges
                 worksheet.View.PageLayoutView = true;
 
                 // Set some document properties
-                package.Workbook.Properties.Title = "Invertory";
+                package.Workbook.Properties.Title = "Inventory";
                 package.Workbook.Properties.Author = "Jan Källman";
                 package.Workbook.Properties.Comments = "This sample demonstrates how to create an Excel workbook using EPPlus";
 
