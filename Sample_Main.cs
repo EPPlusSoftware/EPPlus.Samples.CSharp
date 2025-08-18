@@ -35,12 +35,12 @@ namespace EPPlusSamples
                 //Set the output directory to the SampleApp folder where the app is running from. 
                 FileUtil.OutputDir = new DirectoryInfo($"{AppDomain.CurrentDomain.BaseDirectory}SampleApp");
 
-                //await WorkbookWorksheetAndRangesSamples.RunAsync();
-                //await ImportAndExportSamples.RunAsync();
-                //StylingBasics.Run();
-                //ConditionalFormattingSamples.Run();
+                await WorkbookWorksheetAndRangesSamples.RunAsync();
+                await ImportAndExportSamples.RunAsync();
+                StylingBasics.Run();
+                ConditionalFormattingSamples.Run();
 
-                //await FiltersAndValidation.RunAsync();
+                await FiltersAndValidation.RunAsync();
                 await DrawingsChartsAndThemesSample.RunAsync();
 
                 FormulaCalculationSample.Run();
