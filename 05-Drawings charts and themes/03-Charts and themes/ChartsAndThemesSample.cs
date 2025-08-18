@@ -102,6 +102,7 @@ namespace EPPlusSamples.DrawingsChartsAndThemes
 
                 //Create a pyramid chart and add a shape and a picture to the chart.
                 await ShapesAndPicturesInCharts.Add(package);
+
                 //Save our new workbook in the output directory and we are done!
                 package.SaveAs(xlFile);
                 return xlFile.FullName;
