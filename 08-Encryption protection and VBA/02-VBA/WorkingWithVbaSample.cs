@@ -35,7 +35,7 @@ namespace EPPlusSamples.EncryptionProtectionAndVba
         }
         private static void SimpleVba()
         {
-            ExcelPackage pck = new ExcelPackage();
+            using ExcelPackage pck = new ExcelPackage();
 
             //Add a worksheet.
             var ws=pck.Workbook.Worksheets.Add("VBA Sample");
@@ -60,8 +60,8 @@ namespace EPPlusSamples.EncryptionProtectionAndVba
         {
             FileInfo sample1File = FileUtil.GetFileInfo("1.01-GettingStarted.xlsx");
             //Open Sample 1 again
-            ExcelPackage pck = new ExcelPackage(sample1File);
-            var p = new ExcelPackage();
+            using ExcelPackage pck = new ExcelPackage(sample1File);
+            using var p = new ExcelPackage();
             //Create a vba project             
             pck.Workbook.CreateVBAProject();
 
@@ -96,7 +96,7 @@ namespace EPPlusSamples.EncryptionProtectionAndVba
             //Now, lets do something a little bit more fun.
             //We are going to create a simple battleships game from scratch.
 
-            ExcelPackage pck = new ExcelPackage();
+            using ExcelPackage pck = new ExcelPackage();
 
             //Add a worksheet.
             var ws = pck.Workbook.Worksheets.Add("Battleship");

@@ -1,0 +1,6 @@
+Name,Date,Amount,Percent,Category
+David,2024-03-02,130000,2%,A
+Meryl,2024-02-15,-999,10%,B
+Hal,2005-11-24,0,0%,A
+Frank,1988-10-12,40.00,59%,C
+Naomi,2015-09-03,245000.99,100%,C
