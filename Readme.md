@@ -149,7 +149,7 @@ ___
 
 |No|Sample|Description|
 |---|---|-----------------|
-|8.1|[Encryption and Protection]| Sample of encryption and password protection<img width=800/>|
+|8.1|[Encryption and Protection]| Sample of encryption and password protection.<img width=800/>|
 |8.2|[VBA]| An implementation of a Battleship game, implemented in Excel/VBA as an example of epplus+VBA interaction |
 |8.3|[Digital Signatures]| Demonstrates how to work with  |
 
@@ -157,10 +157,10 @@ ___
 [VBA]: </08-Encryption protection and VBA/02-VBA/Readme.md/>
 [Digital Signatures]: </08-Encryption protection and VBA/03-DigitalSignatures/Readme.md/>
 
-### [Connections and QueryTables](</09-Connections and QueryTables/Readme.md>)
+### Connections and QueryTables
 |No|Sample|Description|
 |---|---|-----------------|
-|9|[Connections and QueryTables]| Sample of external connections and query tables<img width=800/>|
+|9|[Connections and QueryTables](</09-Connections and QueryTables/Readme.md>)| Sample of external connections and query tables.<img width=800/>|
 
 Also see wiki on https://github.com/EPPlusSoftware/EPPlus/wiki for more details
 
