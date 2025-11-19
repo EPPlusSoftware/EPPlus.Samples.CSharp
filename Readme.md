@@ -160,7 +160,7 @@ ___
 ### Connections and QueryTables
 |No|Sample|Description|
 |---|---|-----------------|
-|9|[Connections and QueryTables](</09-Connections and QueryTables/Readme.md>)| Sample of external connections and query tables.<img width=800/>|
+|9|[Connections and QueryTables](</09-Connections and QueryTables>)| Sample of external connections and query tables.<img width=800/>|
 
 Also see wiki on https://github.com/EPPlusSoftware/EPPlus/wiki for more details
 
