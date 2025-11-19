@@ -10,11 +10,6 @@
  *************************************************************************************************
   01/27/2020         EPPlus Software AB           Initial release EPPlus 5
  *************************************************************************************************/
-using EPPlusSamples._05_Drawings_charts_and_themes._06_OLE_Objects;
-using EPPlusSamples.ConditionalFormatting;
-using EPPlusSamples.DrawingsChartsAndThemes;
-using EPPlusSamples.FormulaCalculation;
-using OfficeOpenXml;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -46,6 +41,8 @@ namespace EPPlusSamples
                 FormulaCalculationSample.Run();
                 await TablesPivotTableAndSlicersSample.RunAsync();
                 EncryptionProtectionAndVBASample.Run();
+
+                ConnectionsAndQueryTableSample.Run();
             }
             catch (Exception ex)
             {

@@ -19,7 +19,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace EPPlusSamples._02_Import_and_export._03_Import_export_text_files
+namespace EPPlusSamples
 {
     /// <summary>
     /// This sample shows how to load/save Fixed Width files using the LoadFromText and SaveToText methods.
