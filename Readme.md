@@ -20,7 +20,7 @@ dotnet run
 6. [Formula Calculation](#formula-calculation)
 7. [Tables PivotTables and Slicers](#tables-pivot-tables-and-slicers)
 8. [Encryption Protection and VBA](#encryption-protection-and-vba)
-
+9. [Connections and Query Tables](#encryption-protection-and-vba)
 ### [Workbook Worksheet and Ranges](</01-Workbook worksheet and ranges/Readme.md>)
 |No|Sample|Description|
 |---|---|-----------------|
@@ -156,6 +156,11 @@ ___
 [Encryption and Protection]: </08-Encryption protection and VBA/01-Encryption and protection/Readme.md/>
 [VBA]: </08-Encryption protection and VBA/02-VBA/Readme.md/>
 [Digital Signatures]: </08-Encryption protection and VBA/03-DigitalSignatures/Readme.md/>
+
+### [Connections and QueryTables](</09-Connections and QueryTables/Readme.md>)
+|No|Sample|Description|
+|---|---|-----------------|
+|9|[Connections and QueryTables]| Sample of external connections and query tables<img width=800/>|
 
 Also see wiki on https://github.com/EPPlusSoftware/EPPlus/wiki for more details
 

@@ -44,7 +44,7 @@ namespace EPPlusSamples
             connection.DatabaseProperties.Command = "select * from [Sample9-2.txt]";
 
             var ws = p.Workbook.Worksheets.Add("PivotTableWithConnection");
-            //As EPPlus do not execute the connection/query, you have to specify the fields for the query. These fields must match the output of the query.
+            //As EPPlus does not execute the connection/query, you have to specify the fields for the query. These fields must match the output of the query.
             var pt = ws.PivotTables.Add(ws.Cells["A3"], connection, "PivotTable1", ["Name", "Date", "Amount", "Percent", "Category"]);
             var rf = pt.RowFields.Add(pt.Fields["Date"]);            
             rf.Sort = eSortType.Ascending;
@@ -65,7 +65,7 @@ namespace EPPlusSamples
 
             //The power query formula is written the M language. Please see https://learn.microsoft.com/en-us/powerquery-m/power-query-m-language-specification.
             //The easies way to retrieve the formula is to create the power query connection in Excel and get the formula by opening the workbook in EPPlus and get the formula from the PowerQuerySettings.Formula property.
-            //Please note the EPPlus do not validate this formula and that it should not contain the Section1 declaration at the beginning.
+            //Please note the EPPlus does not validate this formula and that it should not contain the Section1 declaration at the beginning.
             var mFormula = "shared #\"Table 1\" = let\r\n    Source = Web.BrowserContents(\"https://github.com/EPPlusSoftware/EPPlus/wiki/Formatting-and-styling\"),\r\n    #\"Extracted Table From Html\" = Html.Table(Source, {{\"Column1\", \"TABLE > * > TR > :nth-child(1)\"}, {\"Column2\", \"TABLE > * > TR > :nth-child(2)\"}}, [RowSelector=\"TABLE > * > TR\"]),\r\n    #\"Promoted Headers\" = Table.PromoteHeaders(#\"Extracted Table From Html\", [PromoteAllScalars=true]),\r\n    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Id\", Int64.Type}, {\"Format\", type text}})\r\nin\r\n    #\"Changed Type\";";
             var dbConn = p.Workbook.Connections.AddPowerQuery("PowerQueryDbHtmlConnection", connectionString, mFormula);
 
@@ -89,7 +89,7 @@ namespace EPPlusSamples
             tbl.QueryTable.Fields[2].DataBoundColumn = false;
             tbl.Columns[2].CalculatedColumnFormula = "Table_1[[#This Row],[Id]]+1";
 
-            //EPPlus do not execute connections/queries, so we refresh the query when the workbook is loaded.
+            //EPPlus does not execute connections/queries, so we refresh the query when the workbook is loaded.
             tbl.QueryTable.RefreshOnLoad = true;
         }
         private static void CreatePowerQueryTextFileConnection(ExcelPackage p)
@@ -110,7 +110,7 @@ namespace EPPlusSamples
             var tbl = ws.Tables.AddQueryTable(ws.Cells["A1:G2"], "Table_2", dbConn, ["Period", "Europe", "Africa", "Asia", "North America", "South America", "Austraila"]);
             tbl.TableStyle = TableStyles.Dark3;
 
-            //EPPlus do not execute connections/queries, so we refresh the query when the workbook is loaded.
+            //EPPlus does not execute connections/queries, so we refresh the query when the workbook is loaded.
             tbl.QueryTable.RefreshOnLoad = true;
 
             //Styling for a table column can be set via the DataStyle property like this:
@@ -135,13 +135,13 @@ namespace EPPlusSamples
 
             var qt = ws.Tables.AddQueryTable(ws.Cells["A1:G2"], "MyOleDbQuery", c, ["Period", "Europe", "Africa", "Asia", "North America", "South America", "Austraila"]);
 
-            //EPPlus do not execute connections/queries, so we refresh the query when the workbook is loaded.
+            //EPPlus does not execute connections/queries, so we refresh the query when the workbook is loaded.
             qt.QueryTable.RefreshOnLoad = true;
         }
         private static void CreateTextConnection(ExcelPackage p)
         {
             var csvFile = FileUtil.GetFileInfo("09-Connections and QueryTables", "Sample9-1.txt");
-            //EPPlus supports adding older types of connection, for example a connection direcly to a text file.
+            //EPPlus supports adding older types of connection, for example a connection directly agains a text file.
             var c = p.Workbook.Connections.AddText("TextConnection1", csvFile);
             c.TextProperties.Delimited = true;
             c.TextProperties.Delimiter = ",";
@@ -151,12 +151,12 @@ namespace EPPlusSamples
 
             var ws = p.Workbook.Worksheets.Add("TextConnection");
 
-            //Legacy text connections must be add directly to the worksheet, as it is not supported using tables.
+            //Legacy text connections must be added directly to the worksheet, as it is not supported using tables.
             var qt = ws.QueryTables.Add(ws.Cells["A1:G5"], "MyQuertyTable", c);
             ws.Cells["A1:A5"].Style.Numberformat.Format = "yyyy-MM";
             ws.Cells["A1:G1"].Style.Font.Bold = true;
 
-            //EPPlus do not execute connections/queries, so we refresh the query when the workbook is loaded.
+            //EPPlus does not execute connections/queries, so we refresh the query when the workbook is loaded.
             qt.RefreshOnLoad = true;
         }
     }   

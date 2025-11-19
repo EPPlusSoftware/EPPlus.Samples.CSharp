@@ -1,5 +1,5 @@
 ﻿# 08 - Encryption Protection and VBA
-This catalouge provides samples on encription, protection and VBA
+This catalouge provides samples on encryption, protection and VBA
 
 Samples in this folder:
 
