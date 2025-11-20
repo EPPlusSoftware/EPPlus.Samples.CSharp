@@ -1,5 +1,5 @@
 ﻿# 03 - Styling
-This catalouge summarizes differnt types of styling formatting and translating data.
+This folder summarizes differnt types of styling formatting and translating data.
 
 Samples in this folder:
 

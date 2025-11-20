@@ -1,5 +1,5 @@
 ﻿# 07 - Table Pivots and Slicers
-This catalouge provides samples on table pivots and slicers
+This folder provides samples on table pivots and slicers
 
 Samples in this folder:
 

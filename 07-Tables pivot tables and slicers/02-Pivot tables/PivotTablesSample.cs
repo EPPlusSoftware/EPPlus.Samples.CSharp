@@ -364,10 +364,10 @@ namespace EPPlusSamples.PivotTables
             dataField = pt3.DataFields.Add(pt3.Fields["OrderValue"]);
             dataField.Format = "#,##0";
             rowField1.SetAutoSort(dataField, eSortType.Ascending);
-            //var conditionField = rowField1.AutoSort.Conditions.Fields.Add(columnField1);
-            ////Before setting a reference to a value column we need to refresh the items cache.
-            //columnField1.Items.Refresh();
-            //conditionField.Items.AddByValue("Poland");
+            var conditionField = rowField1.AutoSort.Conditions.Fields.Add(columnField1);
+            //Before setting a reference to a value column we need to refresh the items cache.
+            columnField1.Items.Refresh();
+            conditionField.Items.AddByValue("Poland");
         }
 
         private static List<SalesDTO> GetDataFromSQL()

@@ -1,5 +1,5 @@
 ﻿# 06 - Formula Calculation
-This catalouge summarizes how to use Calculate and use the results
+This folder summarizes how to use Calculate and use the results
 
 Samples in this folder:
 

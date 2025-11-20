@@ -20,7 +20,7 @@ dotnet run
 6. [Formula Calculation](#formula-calculation)
 7. [Tables PivotTables and Slicers](#tables-pivot-tables-and-slicers)
 8. [Encryption Protection and VBA](#encryption-protection-and-vba)
-9. [Connections and Query Tables](#encryption-protection-and-vba)
+9. [Connections and Query Tables](#connections-and-querytables)
 ### [Workbook Worksheet and Ranges](</01-Workbook worksheet and ranges/Readme.md>)
 |No|Sample|Description|
 |---|---|-----------------|

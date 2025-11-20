@@ -1,5 +1,5 @@
 ﻿# 02 - Import and Export
-This catalouge summarizes how to import and export to different targets
+This folder summarizes how to import and export to different targets
 
 Samples in this folder:
 
