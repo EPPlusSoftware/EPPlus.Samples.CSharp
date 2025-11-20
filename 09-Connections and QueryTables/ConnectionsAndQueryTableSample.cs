@@ -13,7 +13,7 @@ namespace EPPlusSamples
     {
         /// <summary>
         /// With EPPlus you can add connections to other data sources. EPPlus will not execute the connections, but you can add then and let excel load the data when the workbook is opened.
-        /// EPPlus can many different connections including more modern power query connections. However, EPPlus currently does not support building or modifying data models in Excel.
+        /// EPPlus can add, modify and remove all types of connections, including more modern power query connections. However, EPPlus currently does not support building or modifying data models in Excel.
         /// You can use connections with query tables or as sources to pivot tables. Legacy query tables are added directly to the worksheet, while new query tables are added add as a table using the worksheet.Tables.AddQueryTable method.
         /// </summary>
         public static void Run()
