@@ -18,6 +18,8 @@ namespace EPPlusSamples
         /// </summary>
         public static void Run()
         {
+            Console.WriteLine("Running sample 9-Connections and Query Tables");
+
             using var p = new ExcelPackage();            
 
             /* Create a connection to a text file and load the connection data into the worksheet. This type of connection is considerered legacy in newer versions of Excel. */
