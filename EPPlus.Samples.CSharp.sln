@@ -5,10 +5,6 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EPPlus.Samples.CSharp", "EPPlus.Samples.CSharp.csproj", "{68677B2E-EA58-4EA5-88CC-479E0B2B286C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPPlus", "..\EPPlus\src\EPPlus\EPPlus.csproj", "{CADE33AB-5D77-1BDC-786E-AE5F19E02A8D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPPlus.Interfaces", "..\EPPlus\src\EPPlus.Interfaces\EPPlus.Interfaces.csproj", "{D066CC21-96D5-D7B9-F260-5FACD63C8DCF}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,14 +15,6 @@ Global
 		{68677B2E-EA58-4EA5-88CC-479E0B2B286C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68677B2E-EA58-4EA5-88CC-479E0B2B286C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68677B2E-EA58-4EA5-88CC-479E0B2B286C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CADE33AB-5D77-1BDC-786E-AE5F19E02A8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CADE33AB-5D77-1BDC-786E-AE5F19E02A8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CADE33AB-5D77-1BDC-786E-AE5F19E02A8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CADE33AB-5D77-1BDC-786E-AE5F19E02A8D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D066CC21-96D5-D7B9-F260-5FACD63C8DCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D066CC21-96D5-D7B9-F260-5FACD63C8DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D066CC21-96D5-D7B9-F260-5FACD63C8DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D066CC21-96D5-D7B9-F260-5FACD63C8DCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
