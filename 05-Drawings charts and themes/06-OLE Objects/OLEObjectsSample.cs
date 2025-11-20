@@ -80,7 +80,6 @@ namespace EPPlusSamples._05_Drawings_charts_and_themes._06_OLE_Objects
             //Save the workbook
             p4.SaveAs(newWorkbook);
 
-
             /*    Copy OLE Object    */
             //Create a workbook, get the worksheet and create a new worksheet.
             using var p5 = new ExcelPackage(newWorkbook);

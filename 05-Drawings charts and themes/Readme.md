@@ -1,5 +1,5 @@
 ﻿# 05 - Drawings Charts and Themes
-This catalouge summarizes how to use drawings and themes
+This folder summarizes how to use drawings and themes
 
 Samples in this folder:
 

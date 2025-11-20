@@ -1,5 +1,5 @@
 ﻿# 04 - Filters and Validations
-This catalouge summarizes how to use filters and validations
+This folder summarizes how to use filters and validations
 
 Samples in this folder:
 
