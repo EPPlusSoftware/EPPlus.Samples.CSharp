@@ -102,14 +102,14 @@ namespace EPPlusSamples
             var csvFile = FileUtil.GetFileInfo("09-Connections and QueryTables", "Sample9-1.txt");
             //The M formula. EPPlus does not validate this formulas, so make sure you set it up correctly. A good way of getting your formulas is to create the query in Excel and then open the file with EPPlus to extract the formula from the Workbook.PowerQuerySettings.Formulas property.
             //Please note that the M-Formulas supplied to The AddPowerQuery method should not contain the Section1 declaration.
-            var mFormula = "shared #\"Table 2\" = let\r\n    Source = Csv.Document(File.Contents(\"" + csvFile + "\"),[Delimiter=\",\", Columns=7, QuoteStyle=QuoteStyle.None]),\r\n    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),\r\n    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Period\", type date}, {\"Europe\", type number}, {\"Africa\", type number}, {\"Asia\", type number}, {\"North America\", type number}, {\"South America\", type number}, {\"Austraila\", type number}}, \"en-US\")\r\nin\r\n    #\"Changed Type\";";
+            var mFormula = "shared #\"Table 2\" = let\r\n    Source = Csv.Document(File.Contents(\"" + csvFile + "\"),[Delimiter=\",\", Columns=7, QuoteStyle=QuoteStyle.None]),\r\n    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),\r\n    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Period\", type date}, {\"Europe\", type number}, {\"Africa\", type number}, {\"Asia\", type number}, {\"North America\", type number}, {\"South America\", type number}, {\"Australia\", type number}}, \"en-US\")\r\nin\r\n    #\"Changed Type\";";
 
             var dbConn = p.Workbook.Connections.AddPowerQuery("PowerQueryTextConnection", connectionString, mFormula);
             dbConn.DatabaseProperties.Command = "SELECT * FROM [Table 2]";
 
             var ws = p.Workbook.Worksheets.Add("PowerQueryText");
             //Add a query table with seven columns. As EPPlus does not execute connections/queries, the columns must be specified in the last string array parameter and must match the query output.
-            var tbl = ws.Tables.AddQueryTable(ws.Cells["A1:G2"], "Table_2", dbConn, ["Period", "Europe", "Africa", "Asia", "North America", "South America", "Austraila"]);
+            var tbl = ws.Tables.AddQueryTable(ws.Cells["A1:G2"], "Table_2", dbConn, ["Period", "Europe", "Africa", "Asia", "North America", "South America", "Australia"]);
             tbl.TableStyle = TableStyles.Dark3;
 
             //EPPlus does not execute connections/queries, so we refresh the query when the workbook is loaded.
@@ -135,7 +135,7 @@ namespace EPPlusSamples
 
             var ws = p.Workbook.Worksheets.Add("OleDbConnection");
 
-            var qt = ws.Tables.AddQueryTable(ws.Cells["A1:G2"], "MyOleDbQuery", c, ["Period", "Europe", "Africa", "Asia", "North America", "South America", "Austraila"]);
+            var qt = ws.Tables.AddQueryTable(ws.Cells["A1:G2"], "MyOleDbQuery", c, ["Period", "Europe", "Africa", "Asia", "North America", "South America", "Australia"]);
 
             //EPPlus does not execute connections/queries, so we refresh the query when the workbook is loaded.
             qt.QueryTable.RefreshOnLoad = true;
