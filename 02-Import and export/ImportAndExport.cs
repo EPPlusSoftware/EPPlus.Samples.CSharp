@@ -1,4 +1,5 @@
-﻿using EPPlusSamples.ImportAndExport;
+﻿using EPPlusSamples._02_Import_and_export._99_Save_as_pdf;
+using EPPlusSamples.ImportAndExport;
 using EPPlusSamples.LoadDataFromCsvFilesIntoTables;
 using System.Threading.Tasks;
 
@@ -37,6 +38,11 @@ namespace EPPlusSamples
             // This sample shows how to export data from a worksheet
             // to a IEnumerable<T> where T is a class.
             ToCollectionSample.Run();
+
+            /// Sample 99 - Save as pdf
+            /// This sample shows how to save a workbook, worksheets and ranges to pdf format.
+            SaveAsPdfSample.Run();
+            await SaveAsPdfSample.RunAsync();
         }
     }
 }
